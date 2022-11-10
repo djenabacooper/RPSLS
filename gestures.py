@@ -1,4 +1,5 @@
 class Gesture:
-    def __init__(self, gest_opps):
-        self.gest_opps = []
+    def __init__(self):
+        self.gest_opps = ["Rock","Paper","Scissors","Lizard","Spock"]
         pass
+
