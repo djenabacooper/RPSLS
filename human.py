@@ -7,8 +7,7 @@ class Human(Player):
 
     def choose_gesture(self):
         user_chose = False
-        #for gesture in self.gestures:
-         #   print(gesture) 
+        print(f'Here are the gesture options: {self.gestures}. Type 1 for Rock, 2 for Paper, 3 for Scissors, 4 for Lizard, 5 for Spock')
         while user_chose == False:
             user_input = int(input())
             if user_input == 0:
