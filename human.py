@@ -6,7 +6,9 @@ class Human(Player):
         
 
     def choose_gesture(self):
-        user_chose = False 
+        user_chose = False
+        #for gesture in self.gestures:
+         #   print(gesture) 
         while user_chose == False:
             user_input = int(input())
             if user_input == 0:
@@ -16,15 +18,19 @@ class Human(Player):
             elif user_input == 1:
                 print("Player chooses Paper")
                 user_chose = True
+                self.player_gesture = "Paper"
             elif user_input == 2:
                 print("Player chooses Scissors")
                 user_chose = True
+                self.player_gesture = "Scissors"
             elif user_input == 3:
                 print("Player chooses Lizard")
                 user_chose = True
+                self.player_gesture = "Lizard"
             elif user_input == 4:
-                    self.player_gesture = "Spock"
-                    print("Player chooses Spock")
-                    user_chose = True
+                self.player_gesture = "Spock"
+                print("Player chooses Spock")
+                self.player_gesture = "Spock"
+                user_chose = True
             else:
                 print('Please input a number between 0-')

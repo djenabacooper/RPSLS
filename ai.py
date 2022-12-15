@@ -1,12 +1,15 @@
 from players import Player
-from random import random
+import random
+from gestures import Gesture
 class AI(Player):
     def __init__(self) -> None:
-        super().__init__('skinjob',random.choice(self.player_gesture))
+        super().__init__('skinjob')
         
     
     def choose_gesture(self):
-        self.player_gesture = random.choice(self.player_gesture)
+        self.player_gesture = random.choice(self.gestures)
+        print(f'Player chooses {self.player_gesture}')
+
 
 def name_gest(self):
     print(self.player_name, self.player_gesture)

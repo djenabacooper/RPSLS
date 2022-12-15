@@ -7,8 +7,8 @@ from random import random
 
 class Game:
     def __init__(self,):
-        self.player1 = Human("Bob")
-        self.player2 = AI('player_two')
+        self.player1 = Human('William')
+        self.player2 = AI()
         # self.player_gesture = Gesture()
         # self.round_winner = round_winner
         pass
@@ -33,51 +33,62 @@ class Game:
 
     
     def Round_opps(self):
-        player_type = [1,2]
+        player_type = input('Type 2 for Human, type 1 for AI')
         if player_type == "2":
             self.player1 = Human("Bob")
             self.player2 = Human('player_two')
         else:
-            self.player1 = AI("Bob")
-            self.player2 = AI('player_two')
+            self.player1 = AI()
+            self.player2 = AI() #player_two
 
-        self.player1.choose_gesture()
-        self.player2.choose_gesture()
+        #self.player1.choose_gesture()
+        #self.player2.choose_gesture()
 
-
-        if self.player1.player_gesture == "Rock" and self.player2.player_gesture == "Scissors":
-            self.player1.score += 1
-        elif self.player2.choose_gesture == "Rock" and self.player1.player_gesture == "Scissors":
-            self.player2 +=1 
-            if self.player1.choose_gesture == "Paper" and self.player2.player_gesture == "Rock":
+        winner = ''
+        while winner =='':
+            self.player1.choose_gesture()
+            self.player2.choose_gesture()
+            if self.player1.score == 3:
+                winner = self.player1
+            elif self.player2.score == 3:
+                winner = self.player2
+            if self.player1.player_gesture == "Rock" and self.player2.player_gesture == "Scissors":
                 self.player1.score += 1
-            elif self.player2.choose_gesture == "Paper" and self.player1.player_gesture == "Rock":
-                self.player2 +=1
-            if self.player1.choose_gesture == "Rock" and self.player2.player_gesture == "Lizard":
+            elif self.player2.player_gesture == "Rock" and self.player1.player_gesture == "Scissors":
+                self.player2.score +=1 
+            if self.player1.player_gesture == "Paper" and self.player2.player_gesture == "Rock":
                 self.player1.score += 1
-            elif self.player2.choose_gesture == "Rock" and self.player1.player_gesture == "Lizard":
+            elif self.player2.player_gesture == "Paper" and self.player1.player_gesture == "Rock":
                 self.player2 +=1
-            if self.player1.choose_gesture == "Lizard" and self.player2.player_gesture == "Spock":
+            if self.player1.player_gesture == "Rock" and self.player2.player_gesture == "Lizard":
                 self.player1.score += 1
-            elif self.player2.choose_gesture == "Lizard" and self.player1.player_gesture == "Spock":
+            elif self.player2.player_gesture == "Rock" and self.player1.player_gesture == "Lizard":
                 self.player2 +=1
-            if self.player1.choose_gesture == "Spock" and self.player2.player_gesture == "Scissors":
+            if self.player1.player_gesture == "Lizard" and self.player2.player_gesture == "Spock":
                 self.player1.score += 1
-            elif self.player2.choose_gesture == "Spock" and self.player1.player_gesture == "Scissors":
-                self.player2 +=1
-            if self.player1.choose_gesture == "Scissors" and self.player2.player_gesture == "Lizard":
+            elif self.player2.player_gesture == 'Lizard' and self.player1.player_gesture == "Spock":
+                self.player2.score +=1
+            if self.player1.player_gesture == "Spock" and self.player2.player_gesture == "Scissors":
                 self.player1.score += 1
-            elif self.player2.choose_gesture == "Scissors" and self.player1.player_gesture == "Lizard":
-                self.player2 +=1
-            if self.player1.choose_gesture == "Paper" and self.player2.player_gesture == "Spock":
+            elif self.player2.player_gesture == "Spock" and self.player1.player_gesture == "Scissors":
+                self.player2.score +=1
+            if self.player1.player_gesture == "Scissors" and self.player2.player_gesture == "Lizard":
                 self.player1.score += 1
-            elif self.player2.choose_gesture == "Paper" and self.player1.player_gesture == "Spock":
-                self.player2 +=1
-            if self.player1.choose_gesture == "Spock" and self.player2.player_gesture == "Rock":
+            elif self.player2.player_gesture == "Scissors" and self.player1.player_gesture == "Lizard":
+                self.player2.score +=1
+            if self.player1.player_gesture == "Paper" and self.player2.player_gesture == "Spock":
                 self.player1.score += 1
-            elif self.player2.choose_gesture == "Spock" and self.player1.player_gesture == "Rock":
-                self.player2 +=1
-            print("Yee")
+            elif self.player2.player_gesture == "Paper" and self.player1.player_gesture == "Spock":
+                self.player2.score +=1
+            if self.player1.player_gesture == "Spock" and self.player2.player_gesture == "Rock":
+                self.player1.score += 1
+            elif self.player2.player_gesture == "Spock" and self.player1.player_gesture == "Rock":
+                self.player2.score +=1
+            if self.player1.score == 3:
+                winner = self.player1.player_name
+            elif self.player2.score == 3:
+                winner = self.player2.player_name
+        print(f'Winner is {winner}!')
  
         # active_round = True
         # round_count = 0
