@@ -7,7 +7,7 @@ class Human(Player):
 
     def choose_gesture(self):
         user_chose = False
-        print(f'Here are the gesture options: {self.gestures}. Type 1 for Rock, 2 for Paper, 3 for Scissors, 4 for Lizard, 5 for Spock')
+        print(f'Here are the gesture options: {self.gestures}. Type 0 for Rock, 1 for Paper, 2 for Scissors, 3 for Lizard, 4 for Spock')
         while user_chose == False:
             user_input = int(input())
             if user_input == 0:
@@ -32,4 +32,4 @@ class Human(Player):
                 self.player_gesture = "Spock"
                 user_chose = True
             else:
-                print('Please input a number between 0-')
+                print('Please input a number between 0-4')

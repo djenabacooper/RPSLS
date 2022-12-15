@@ -33,13 +33,16 @@ class Game:
 
     
     def Round_opps(self):
-        player_type = input('Type 2 for Human, type 1 for AI')
-        if player_type == "2":
+        player_type = input('Type 1 for Human vs Human, type 2 for AI vs AI, type 3 for Human vs AI')
+        if player_type == "1":
             self.player1 = Human("Bob")
-            self.player2 = Human('player_two')
-        else:
+            self.player2 = Human('John')  
+        elif player_type == '2':
             self.player1 = AI()
             self.player2 = AI() #player_two
+        else:
+            self.player1 = AI()
+            self.player2 = Human("Player 2")
 
         #self.player1.choose_gesture()
         #self.player2.choose_gesture()

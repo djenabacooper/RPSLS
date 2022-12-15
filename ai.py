@@ -7,7 +7,7 @@ class AI(Player):
         
     
     def choose_gesture(self):
-        print(f'Here are the gesture options: {self.gestures}. Type 1 for Rock, 2 for Paper, 3 for Scissors, 4 for Lizard, 5 for Spock')
+        print(f'Here are the gesture options: {self.gestures}. Type 0 for Rock, 1 for Paper, 2 for Scissors, 3 for Lizard, 4 for Spock')
         self.player_gesture = random.choice(self.gestures)
         print(f'Player chooses {self.player_gesture}')
 
