@@ -12,5 +12,5 @@ class AI(Player):
         print(f'Player chooses {self.player_gesture}')
 
 
-def name_gest(self):
-    print(self.player_name, self.player_gesture)
+#def name_gest(self):
+ #   print(self.player_name, self.player_gesture)
